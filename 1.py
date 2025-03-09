@@ -1,8 +1,5 @@
-file = open('C:/Users/Mi/Desktop/1 лаба.txt', "r" , encoding="utf-8")
-text = file.read()
-file.close()
-
-text = text.lower()
+#В заданном тексте определить частоту, с которой встречаются в тексте различные буквы русского алфавита (в долях от общего количества букв)
+text = "я учусь в лучшем вузе в мире!"
 
 letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 letter_counts = {letter: 0 for letter in letters}
