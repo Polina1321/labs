@@ -1,3 +1,4 @@
+#Минимальный элемент заданного одномерного массива увеличить в 2 раза
 file = open("C:/Users/Mi/Desktop/2 лаба.txt", "r")
 numbers = list(map(int, file.read().split()))
 file.close()
