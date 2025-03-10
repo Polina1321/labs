@@ -13,7 +13,7 @@ def read_dan(a):
 
 
 def graphic_func():
-    x, y = read_dan('C:/Users/Mi/Desktop/лаба 2..txt')
+    x, y = read_dan('C:/Users/Mi/Desktop/лаба 4.txt')
 
     ax.clear()
     ax.plot(x, y, marker='o', linestyle='-', color='b')
