@@ -1,3 +1,4 @@
+#Цель: построить модель линейной регрессии, используя библиотеки Python.
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
