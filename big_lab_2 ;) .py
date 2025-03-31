@@ -1,3 +1,4 @@
+#Постановка задачи: реализовать в python метод кластеризации данных k средних (k means) на примере данных в двумерном пространстве с применением библиотеки matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
