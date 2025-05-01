@@ -1,3 +1,4 @@
+#Постановка задачи: реализовать метод градиентного спуска на языке python
 import numpy as np
 import matplotlib.pyplot as plt
 
