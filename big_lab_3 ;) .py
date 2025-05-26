@@ -1,4 +1,5 @@
 #Постановка задачи: реализовать регрессию на python с использованием библиотеки matplotlib
+#Вариант 13, степенная функция
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
