@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_circles, make_moons, make_blobs
-from sklearn.cluster import KMeans, SpectralClustering, OPTICS
+from sklearn.cluster import MeanShift, AgglomerativeClustering, DBSCAN
 from sklearn.preprocessing import StandardScaler
 import time
 
@@ -30,19 +30,19 @@ def apply_clustering(X, algorithm):
     X = StandardScaler().fit_transform(X)
     start_time = time.time()
 
-    if algorithm == "KMeans":
-        labels = KMeans(n_clusters=3, random_state=42).fit_predict(X)
-    elif algorithm == "Spectral":
-        labels = SpectralClustering(n_clusters=3, affinity='nearest_neighbors', random_state=42).fit_predict(X)
-    elif algorithm == "OPTICS":
-        labels = OPTICS(min_samples=5).fit_predict(X)
+    if algorithm == "MeanShift":
+        labels = MeanShift(bandwidth=0.5).fit_predict(X)
+    elif algorithm == "Agglomerative Clustering":
+        labels = AgglomerativeClustering(n_clusters=3).fit_predict(X)
+    elif algorithm == "DBSCAN":
+        labels = DBSCAN(eps=0.3, min_samples=5).fit_predict(X)
 
     exec_time = time.time() - start_time
     return labels, exec_time
 
 
 plt.figure(figsize=(12, 18))
-algorithms = ["KMeans", "Spectral", "OPTICS"]
+algorithms = ["MeanShift", "Agglomerative Clustering", "DBSCAN"]
 data_types = ["circles", "moons", "blobs", "anisotropic", "varied", "structured"]
 
 for i, data_type in enumerate(data_types):
@@ -57,7 +57,7 @@ for i, data_type in enumerate(data_types):
 
         ax.text(0.95, 0.05, f"{exec_time:.3f}s",
                 transform=ax.transAxes, ha='right', va='bottom',
-                bbox=dict(facecolor='white', alpha=0.7, edgecolor='none'))
+                bbox=dict(facecolor='pink', alpha=0.7, edgecolor='purple'))
 
         if j == 0:
             ax.set_ylabel(data_type, fontsize=10, rotation=0, ha='right', va='center')
